@@ -71,6 +71,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myBlog.wsgi.application'
 
+# Templates dir
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+TEMPLATE_DIRS = (
+    TEMPLATE_PATH,
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
