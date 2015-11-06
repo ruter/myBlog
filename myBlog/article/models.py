@@ -32,3 +32,11 @@ class Article(models.Model):
 
     class Meta:
         ordering = ['-date']                                        #Ordering by date desc
+
+
+class BlogInfo(models.Model):
+    blogName = models.CharField(u'Blog Name', max_length=20)        #Blog's name
+    logo = models.CharField(u'Logo', max_length=100, blank=True, null=True)         #Logo's link
+    avatar = models.CharField(u'Avatar', max_length=100, blank=True, null=True)     #Your avatar's link
+    oName = models.CharField(u'Name', max_length=20, blank=True, null=True)         #Your name
+    intro = models.TextField(u'Intro', blank=True, null=True)       #Your intro
