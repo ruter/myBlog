@@ -8,7 +8,11 @@ class ArticleAdmin(admin.ModelAdmin):
     filter_horizontal = ('tag',)                    #Horizontal display tag's select field
 
 
+class InfoAdmin(admin.ModelAdmin):
+    list_display = ('blogName', 'oName', 'intro')
+
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Category)
 admin.site.register(Tag)
 
+admin.site.register(BlogInfo, InfoAdmin)
