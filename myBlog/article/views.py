@@ -2,6 +2,7 @@
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from article.models import *
+from django import forms
 
 def home(request):
     info = BlogInfo.objects.get(pk = 1)
