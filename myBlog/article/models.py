@@ -42,13 +42,19 @@ class BlogInfo(models.Model):
     oName = models.CharField(u'Name', max_length=20, blank=True, null=True)         #Your name
     intro = models.TextField(u'Intro', blank=True, null=True)       #Your intro
 
+    def __unicode__(self):
+        return self.blogName
 
-class ContactForm(models.Model):
+
+class Contact(models.Model):
     userName = models.CharField(u'Username', max_length=20)
     email = models.EmailField(u'E-mail')
     subject = models.CharField(u'Subject', max_length=100)
     message = models.TextField(u'Message')
     submitDate = models.DateTimeField(u'Date', auto_now_add=True)
+
+    def __unicode__(self):
+        return self.subject
 
     class Meta:
         ordering = ['-submitDate']

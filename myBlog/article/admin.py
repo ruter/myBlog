@@ -22,4 +22,4 @@ admin.site.register(Tag)
 
 admin.site.register(BlogInfo, InfoAdmin)
 
-admin.site.register(ContactForm, ContactAdmin)
+admin.site.register(Contact, ContactAdmin)
