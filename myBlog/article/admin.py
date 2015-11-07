@@ -12,8 +12,14 @@ class ArticleAdmin(admin.ModelAdmin):
 class InfoAdmin(admin.ModelAdmin):
     list_display = ('blogName', 'oName', 'intro')
 
+
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('subject', 'submitDate')
+
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Category)
 admin.site.register(Tag)
 
 admin.site.register(BlogInfo, InfoAdmin)
+
+admin.site.register(ContactForm, ContactAdmin)

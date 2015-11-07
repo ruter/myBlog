@@ -41,3 +41,14 @@ class BlogInfo(models.Model):
     avatar = models.CharField(u'Avatar', max_length=100, blank=True, null=True)     #Your avatar's link
     oName = models.CharField(u'Name', max_length=20, blank=True, null=True)         #Your name
     intro = models.TextField(u'Intro', blank=True, null=True)       #Your intro
+
+
+class ContactForm(models.Model):
+    userName = models.CharField(u'Username', max_length=20)
+    email = models.EmailField(u'E-mail')
+    subject = models.CharField(u'Subject', max_length=100)
+    message = models.TextField(u'Message')
+    submitDate = models.DateTimeField(u'Date', auto_now_add=True)
+
+    class Meta:
+        ordering = ['-submitDate']
