@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """myBlog URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -20,4 +21,8 @@ from article import views as article
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', article.home),
+    url(r'^index\.html$', article.home),
+    url(r'^about\.html$', article.about),
+    url(r'^contact\.html$', article.contact),
+    url(r'^blog/article=(?P<pk>\d+)/$', article.blog),
 ]
