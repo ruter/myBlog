@@ -1,0 +1,19 @@
+<article class="post post-1">
+    <header class="entry-header">
+        <h1 class="entry-title">
+            <a href="{% url 'blog' pk=article.pk %}">{{ article.title }}</a>
+        </h1>
+        <div class="entry-meta">
+            <span class="post-category"><a href="{% url 'category' cate=article.category %}">{{ article.category }}</a></span>
+            <span><a href="#">{{ article.date }}</a></span>
+        </div>
+    </header>
+    <div class="entry-content clearfix">
+        <p>
+            {{ article.content }}
+        </p>
+        <div class="read-more cl-effect-14">
+            <a href="{% url 'blog' pk=article.pk %}" class="more-link">Read more <span class="meta-nav">→</span></a>
+        </div>
+    </div>
+</article>

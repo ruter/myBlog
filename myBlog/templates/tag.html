@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <main class="col-md-12">
+        <div>
+            <span>已找到 {{ article_list|length }} 篇位于"{{ article_tag }}"下的文章:</span>
+        </div>
+        {% for article in article_list %}
+		    {% include "preview.html" %}
+        {% endfor %}
+	</main>
+{% endblock %}
