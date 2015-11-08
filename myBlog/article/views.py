@@ -76,7 +76,7 @@ def contact(request):
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('contact.html')
-        
+
     try:
         info = BlogInfo.objects.get(pk = 1)
     except BlogInfo.DoesNotExist:
