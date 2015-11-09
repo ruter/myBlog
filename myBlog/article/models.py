@@ -40,6 +40,7 @@ class BlogInfo(models.Model):
     logo = models.CharField(u'Logo', max_length=100, blank=True, null=True)         #Logo's link
     avatar = models.CharField(u'Avatar', max_length=100, blank=True, null=True)     #Your avatar's link
     oName = models.CharField(u'Name', max_length=20, blank=True, null=True)         #Your name
+    domain = models.CharField(u'Domain', max_length=20, blank=True, null=True)      #Your major
     intro = models.TextField(u'Intro', blank=True, null=True)       #Your intro
 
     def __unicode__(self):
