@@ -1,0 +1,15 @@
+*.pyc
+*.orig
+*~
+*.rej
+.installed.cfg
+__minitage__*
+bin/*
+develop-eggs
+downloads
+eggs
+log
+parts
+tmp
+*.json
+.DS_Store
