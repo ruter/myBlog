@@ -22,7 +22,17 @@ def home(request):
     except Article.DoesNotExist:
         raise Http404
 
-    return render(request, 'index.html', {'info': info, 'article_list': article_list})
+    try:
+        categorys = Category.objects.all()
+    except Category.DoesNotExist:
+        raise Http404
+
+    try:
+        tags = Tag.objects.all()
+    except Tag.DoesNotExist:
+        raise Http404
+
+    return render(request, 'index.html', {'info': info, 'article_list': article_list, 'categorys': categorys, 'tags': tags})
 
 def blog(request, pk):
     try:
@@ -35,7 +45,17 @@ def blog(request, pk):
     except Article.DoesNotExist:
         raise Http404
 
-    return render(request, 'single.html', {'info': info, 'article': article})
+    try:
+        categorys = Category.objects.all()
+    except Category.DoesNotExist:
+        raise Http404
+
+    try:
+        tags = Tag.objects.all()
+    except Tag.DoesNotExist:
+        raise Http404
+
+    return render(request, 'single.html', {'info': info, 'article': article, 'categorys': categorys, 'tags': tags})
 
 def category(request, cate):
     try:
@@ -75,7 +95,7 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('contact.html')
+            return HttpResponseRedirect('thanks.html')
 
     try:
         info = BlogInfo.objects.get(pk = 1)
@@ -83,3 +103,11 @@ def contact(request):
         raise Http404
 
     return render(request, 'contact.html', {'info': info})
+
+def thanks(request):
+    try:
+        info = BlogInfo.objects.get(pk = 1)
+    except BlogInfo.DoesNotExist:
+        raise Http404
+
+    return render(request, 'thanks.html', {'info': info})
