@@ -29,4 +29,5 @@ urlpatterns = [
     url(r'^blog/article=(?P<pk>\d+)/$', article.blog, name='blog'),
     url(r'^tag/(?P<tag>\w+)/$', article.tag, name='tag'),
     url(r'^category/(?P<cate>\w+)/$', article.category, name='category'),
+    url(r'^thanks.html$', article.thanks, name='thanks')
 ]
