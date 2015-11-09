@@ -350,6 +350,17 @@ figure {
 	font-weight: 400;
 }
 
+.widget-tags ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget-tags ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
 .widget-recent-posts ul {
     padding: 0;
     margin: 0;
@@ -610,6 +621,10 @@ figure {
     padding: 0;
     margin: 0;
     text-align: center;
+}
+
+.social-index {
+    text-align: left;
 }
 
 .social li {
