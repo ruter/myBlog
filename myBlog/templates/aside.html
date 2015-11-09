@@ -1,45 +1,59 @@
 <aside class="col-md-4">
-    <div class="widget widget-recent-posts">
-        <h3 class="widget-title">Recent Posts</h3>
-        <ul>
-            <li>
-                <a href="#">Adaptive Vs. Responsive Layouts And Optimal Text Readability</a>
-            </li>
-            <li>
-                <a href="#">Web Design is 95% Typography</a>
-            </li>
-            <li>
-                <a href="#">Paper by FiftyThree</a>
-            </li>
-        </ul>
+    <div class="widget">
+        <div class="center-block" style="width: 100px"><img src="{{ info.avatar }}" alt="" class="img-circle img-responsive"></div>
+
+        <div class="text-center">
+            <h2>{{ info.oName }}</h2>
+            <h6 style="margin-top: -12px; color: #9A9A9A">{{ info.domain }}</h6>
+        </div>
+        <p>{{ info.intro }}</p>
+        <br>
     </div>
-    <div class="widget widget-archives">
-        <h3 class="widget-title">Archives</h3>
-        <ul>
-            <li>
-                <a href="#">November 2014</a>
-            </li>
-            <li>
-                <a href="#">September 2014</a>
-            </li>
-            <li>
-                <a href="#">January 2013</a>
-            </li>
-        </ul>
-    </div>
+
+    <!--<div class="widget widget-archives">-->
+        <!--<h3 class="widget-title">Archives</h3>-->
+        <!--<ul>-->
+            <!--<li>-->
+                <!--<a href="#">November 2014</a>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<a href="#">September 2014</a>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<a href="#">January 2013</a>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
 
     <div class="widget widget-category">
         <h3 class="widget-title">Category</h3>
         <ul>
+            {% for category in categorys %}
             <li>
-                <a href="#">Web Design</a>
+                <a href="{% url 'category' cate=category %}">{{ category }}</a>
             </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="widget widget-tags">
+        <h3 class="widget-title">Tags</h3>
+        <ul>
+            {% for tag in tags %}
             <li>
-                <a href="#">Web Development</a>
+                <a href="{% url 'tag' tag=tag %}">{{ tag }}</a>
             </li>
-            <li>
-                <a href="#">SEO</a>
-            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="widget">
+        <h3 class="widget-title">Social</h3>
+        <ul class="social social-index">
+            <li class="facebook"><a href="#"><span class="ion-social-facebook"></span></a></li>
+            <li class="twitter"><a href="#"><span class="ion-social-twitter"></span></a></li>
+            <li class="google-plus"><a href="#"><span class="ion-social-googleplus"></span></a></li>
+            <li class="tumblr"><a href="#"><span class="ion-social-tumblr"></span></a></li>
         </ul>
     </div>
 </aside>
