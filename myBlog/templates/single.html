@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load custom_markdown %}
 
 {% block main %}
 	<main class="col-md-8">
@@ -12,7 +13,7 @@
 				</div>
 			</header>
 			<div class="entry-content clearfix">
-				<p>{{ article.content }}</p>
+				<p>{{ article.content|custom_markdown }}</p>
 			</div>
 			<hr>
 			<div>
