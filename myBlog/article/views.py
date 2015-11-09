@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from article.models import *
 from django import forms
 
@@ -17,10 +18,15 @@ def home(request):
     except BlogInfo.DoesNotExist:
         raise Http404
 
+    articles = Article.objects.all()
+    paginator = Paginator(articles, 5)
+    page = request.GET.get('page')
     try:
-        article_list = Article.objects.all()
-    except Article.DoesNotExist:
-        raise Http404
+        article_list = paginator.page(page)
+    except PageNotAnInteger:
+        article_list = paginator.page(1)
+    except EmptyPage:
+        article_list = paginator.paginator(paginator.num_pages)
 
     try:
         categorys = Category.objects.all()
